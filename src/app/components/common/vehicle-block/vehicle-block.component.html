@@ -1,0 +1,14 @@
+<mat-card class="w-100 card">
+  <mat-card-header class="card-header justify-content-center">
+    <mat-card-title class="card-title text-center">{{ vehicleData.vehicle_name }}</mat-card-title>
+  </mat-card-header>
+  <img class="card-image" [(src)]="imagePath" alt="{{vehicleData.vehicle_name}}-image">
+  <mat-card-content>
+    <p class="vehicle-description mt-3">
+      {{ vehicleData.vehicle_description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="mb-1">
+    <button (click)="openDialog()" class="curiosities-button btn btn-primary mx-auto mt-1 px-3 py-2">Curiosidades</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,160 @@
+@import "../../../sass/variables/imports.scss";
+
+.aside-bar{
+  width: 50px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  position: sticky;
+  top: 6rem;
+  left: 0;
+  height: calc(100vh - 6rem);
+  height: calc(100dvh - 6rem);
+  background-color: $bg-color;
+  box-shadow: .25rem 0 .5rem #2222227a;
+  overflow: hidden;
+  .aside-bar-header{
+    p{
+      display: none;
+      @include font-style($roboto, 1.3rem, thin, $dark-font-color);
+    }
+
+    .aside-toggle-button{
+      background-color: transparent;
+      border: none;
+      transition: all .5s ease-in-out;
+    }
+  }
+
+  .page-option{
+    width: 0;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    list-style: none;
+    padding-left: 0;
+
+    .page-option-items{
+      width: 100%;
+      text-align: center;
+      @include font-style($roboto, 1.15rem, 400, $dark-font-color);
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      img{
+        width: 100%;
+        height: 12.5rem;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &:hover,&:focus{
+        transform: scale(.95);
+      }
+    }
+  }
+
+  &.active{
+    width: 300px;
+    overflow: auto;
+
+    .aside-bar-header{
+      p{
+        display: block;
+      }
+  
+      .aside-toggle-button{
+        background-color: transparent;
+        border: none;
+      }
+    }
+    .page-option{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+    }
+    padding-left: $default-padding;
+  }
+}
+
+@media (min-width: 1700px) {
+  .aside-bar{
+
+    &.active{
+      width: 380px;
+    }
+
+    .aside-bar-header{
+      p{
+        font-size: 1.4rem;
+      }
+    }
+
+    .page-option{
+      .page-option-items{
+        img{
+          height: 14rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1500px){
+  .aside-bar{
+    top: 8rem;
+    height: calc(100vh - 8rem);
+    height: calc(100dvh - 8rem);
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .aside-bar{
+    position: fixed;
+    z-index: 1050;
+    margin-right: 0 !important;
+    width: 2rem;
+    padding-left: .25rem;
+    &::after{
+      content: "";
+      width: 0;
+      height: 100%;
+      background-color: #2222227a;
+      position: fixed;
+      top: 6rem;
+      right: 0;
+      z-index: 1000;
+      transition: all .5s ease-in-out;
+    }
+
+    &.active{
+      width: 50%;
+
+      &::after{
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .aside-bar{
+    background-color: transparent;
+    box-shadow: none;
+    transition: background-color .2s ease-in-out, width .5s ease-in-out;
+    .page-option{
+      .page-option-items{
+        img{
+          max-width: 15.625rem;
+        }
+      }
+    }
+    &::after{
+      display: none;
+    }
+
+    &.active{
+      width: 100%;
+      background-color: $bg-color;
+      box-shadow: .25rem 0 .5rem #2222227a;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="aside-bar {{ windowWidth <= 768 ? null : 'active'}} pt-3 me-4" #asideBar>
+  <div class="dark-bg"></div>
+  <div class="d-flex aside-bar-header w-100 align-items-center justify-content-between {{ actived ? 'pe-4' : 'pe-0' }}">
+    <p class="mb-0">Mais tópicos</p>
+    <button class="btn btn-primary aside-toggle-button p-0 fs-3 {{asideButtonIcon === 'bi-list' ? 'mx-auto' : null}}" (click)="closeAside()">
+      <i class="bi {{ asideButtonIcon }} dark-font"></i>
+    </button>
+  </div>
+  <ul class="page-option flex-column gap-3 {{ actived ? 'pe-4' : 'pe-0' }}">
+    <li *ngFor="let page of availablePagesToNavigate" class="page-option-items rounded-3" >
+      <div 
+      class="itens-aside "
+      (click)="changePage(page.pagePath)" 
+      (keypress)="changePage(page.pagePath)" 
+      tabindex="{{ actived ? '0' : '-1' }}"
+      >
+        <img class="aside-image rounded-3" src="{{ page.imagePath }}" alt="image">
+        <p class="mb-0 mt-2">{{ page.pageTitle }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,32 @@
+@import "../../../../sass/variables/imports.scss";
+
+.vehicle-image{
+  max-width: 100%;
+  max-height: 15rem;
+}
+
+.vehicle-name{
+  @include font-style($poetsen-one, 1.5rem, 400, $dark-font-color)
+}
+
+.vehicle-data, .vehicle-curiosities{
+  list-style: none;
+  padding: 0;
+}
+
+.vehicle-data-items, .vehicle-curiosities-items{
+  @include font-style($roboto, 1rem, 400, $dark-font-color)
+}
+
+.extra-content{
+  @include font-style($poetsen-one, 1.25rem, 400, $dark-font-color)
+}
+
+@media (max-width: 475px) {
+  .vehicle-name{
+    font-size: 1.25rem;
+  }
+  .vehicle-data-items, .vehicle-curiosities-items{
+    font-size: .9rem;
+  }
+}

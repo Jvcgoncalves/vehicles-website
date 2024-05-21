@@ -1,0 +1,8 @@
+@import "../../../sass/variables/imports.scss";
+
+.error-block{
+  .error-message{
+    @include font-style($roboto, 1.2rem, 400, $dark-font-color);
+    text-wrap: wrap;
+  }
+}

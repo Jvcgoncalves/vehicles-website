@@ -1,0 +1,64 @@
+@import "../../../sass/variables/imports.scss";
+
+.header{
+  background-color: $my-pallet-main;
+  height: 6rem;
+  padding: 0 $default-padding !important;
+  box-shadow: 0 0 .5rem #222;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  .navbar{
+    .navbar-nav{
+      .nav-item{
+        @include font-style($poetsen-one, 1.5rem, normal, $dark-font-color);
+        .site-logo{
+          width: 4rem;
+          height: 4rem;
+          filter: drop-shadow(0 0 .5rem #22222288);
+        }
+        .github-icon{
+          width: 2.25rem;
+          height: auto;
+          filter: drop-shadow(0 0 .5rem #22222288);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .header{
+    height: 8rem;
+    .navbar{
+      .navbar-nav{
+        .nav-item{
+          .site-logo{
+            width: 5rem;
+            height: 5rem;
+          }
+          .github-icon{
+            width: 2.75rem;
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header{
+    padding: 0 calc($default-padding - 1.5rem) !important;
+    .navbar{
+      .navbar-nav{
+        .nav-item{
+          .github-icon{
+            width: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

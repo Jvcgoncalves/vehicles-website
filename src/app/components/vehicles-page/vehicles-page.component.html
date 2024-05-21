@@ -1,0 +1,7 @@
+<div class="vehicle-content {{ classOnVehicleContent }}">
+  <app-loader *ngIf="!getErrorFromDataBase && !allVehiclesDataArray"></app-loader>
+  <app-error-on-load-vehicles *ngIf="getErrorFromDataBase; else getSuccessOnVehiclesLoad"></app-error-on-load-vehicles>
+  <ng-template #getSuccessOnVehiclesLoad>
+    <app-vehicle-block *ngFor="let vehicle of allVehiclesDataArray" [vehicleData]="vehicle" pathToGetImage="/{{basePath}}/image"></app-vehicle-block>
+  </ng-template>
+</div>

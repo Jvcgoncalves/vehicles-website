@@ -1,0 +1,51 @@
+<h2 class="vehicle-name" mat-dialog-title>{{ vehicleData.vehicle_name }} </h2>
+<mat-dialog-content>
+  <div class="row ">
+    <div class="col-md-5">
+      <img class="vehicle-image rounded-3" [src]="image" alt="{{vehicleData.vehicle_name}}-image">
+      <ul class="vehicle-data mt-3">
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Motor: {{ vehicleData.engine_model }}
+          </p>
+        </li>
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Potência do motor: {{ vehicleData.engine_power }}
+          </p>
+        </li>
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Torque: {{ vehicleData.torque }}
+          </p>
+        </li>
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Transmissão: {{ vehicleData.transmission }}
+          </p>
+        </li>
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Preço: {{ vehicleData.price }}
+          </p>
+        </li>
+        <li class="vehicle-data-items mb-1">
+          <p class="mb-0">
+            - Capacidade do tanque de combustível: {{ vehicleData.fuel_tank }}
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <h2 class="extra-content mb-2">Curiosidades adicionais</h2>
+      <ul class="vehicle-curiosities">
+        <li class="vehicle-curiosities-items mt-2" *ngFor="let curiosity of vehicleData.curiosities">
+          - {{ curiosity }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

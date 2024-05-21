@@ -1,0 +1,68 @@
+@import "../../../sass/variables/imports.scss";
+
+.card{
+  height: max-content;
+  width: 100%;
+  max-width: 18rem;
+  min-width: 16rem;
+  .card-header{
+    padding: .5rem;
+    .card-title{
+      @include font-style($poetsen-one, 1.25rem, normal, $dark-font-color);
+      text-wrap: wrap;
+    }
+  }
+
+  .card-image{
+    height: 14.5rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .vehicle-description{
+    min-height: 8rem;
+    @include font-style($roboto, 1rem, 400, $dark-font-color);
+  }
+
+  .curiosities-button{
+    @include font-style($roboto, 1rem, 400,$light-font-color);
+    background: linear-gradient(-135deg, $my-pallet-dark 0, $my-pallet-main 100%);
+    transition: all .3s ease-in-out;
+    color: $light-font-color;
+    border: .1rem $gray-1000;
+    &:focus,&:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+// $my-pallet-main: #f43222;
+// $my-pallet-light: #f99b94;
+// $my-pallet-dark: #680000;
+@media (min-width: 1500px) {
+  .card{
+    .card-image{
+      height: 15rem;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .card{
+    min-width: 0;
+    max-width: 80%;
+    margin: 0 auto;
+
+    .card-image{
+      height: 13rem;
+    }
+
+    .vehicle-description{
+      min-height: 8rem;
+      font-size: .9rem;
+    }
+
+    .curiosities-button{
+      font-size: .9rem;
+    }
+  }
+}

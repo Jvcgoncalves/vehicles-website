@@ -1,0 +1,9 @@
+@import "../../sass/variables/imports.scss";
+
+.title-header{
+  @include font-style($roboto, 1.75rem, 500, $dark-font-color)
+}
+
+.common-text{
+  @include font-style($roboto, 1rem, 400, $dark-font-color)
+}

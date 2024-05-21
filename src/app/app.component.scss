@@ -1,0 +1,81 @@
+@import "./sass/variables/imports.scss";
+
+#App{
+  min-height: 100vh;
+  background-color: $bg-color;
+  flex-direction: column;
+  font-size: 1.125rem;
+  font-family: 'roboto';
+  position: relative;
+}
+
+app-vehicle-block{
+  display: grid;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: $dark-font-color; 
+  border-radius: 6px; 
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.dark-font{
+  color: $dark-font-color !important;
+}
+
+.light-font{
+  color: $light-font-color !important;
+}
+
+.content{
+  width: 100%;
+  grid-template-columns: max-content minmax(200px, 100%);
+  .title{
+    @include font-style($poetsen-one, 2.25rem, normal, $dark-font-color);
+    text-shadow: .1rem .1rem .15rem #222222b7;
+  }
+  .brand-phrase{
+    @include font-style($roboto, 1.15rem, 400, $dark-font-color);
+  }
+}
+
+.main-content{
+  padding: 0 $default-padding;
+}
+
+.vehicle-content{
+  gap: 2rem;
+  place-content: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content{
+    grid-template-columns: 1fr;
+  }
+
+  .main-content{
+    padding: 0 calc($default-padding - 1.5rem);
+  }
+}
+
+@media (max-width: 375px) {
+  .main-content{
+    padding: 0;
+  }
+
+  .content{
+    .title{
+      font-size: 1.5rem;
+    }
+    .brand-phrase{
+      font-size: .9rem;
+      text-wrap: wrap;
+    }
+  }
+}
